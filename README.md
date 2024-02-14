@@ -11,10 +11,7 @@ Normal install via Composer.
 ```php
 use Travis\SimpleTexting;
 
-$apikey = 'yourapikey';
 $response = SimpleTexting::run($apikey, 'post', 'contacts', [
-    'upsert' => true,
-    'listsReplacement' => false,
     'contactPhone' => 123456789,
     'firstName' => 'John',
     'lastName' => 'Doe',
@@ -27,7 +24,7 @@ $response = SimpleTexting::run($apikey, 'post', 'contacts', [
         'yourlistid1',
         'yourlistid2',
     ],
-]);
+], 30, false); // last param $is_list_replacement (default "false"), leave off to append subscriptions instead of replace
 ```
 
 The response will look like this:
