@@ -12,7 +12,7 @@ Normal install via Composer.
 use Travis\SimpleTexting;
 
 $apikey = 'yourapikey';
-$response = SimpleTexting::run($apikey, 'contacts', [
+$response = SimpleTexting::run($apikey, 'post', 'contacts', [
     'upsert' => true,
     'listsReplacement' => false,
     'contactPhone' => 123456789,
